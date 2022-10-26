@@ -1,0 +1,24 @@
+void Level_34(string word)		
+{
+	if(Verify(word, "else if")){
+		choice = 2;
+	}
+	else
+	{
+		if(Verify(word, "if")){
+			choice = 1;
+		}
+		if(Verify(word, "else"))
+		{
+			if(choice == 1){
+				ifelse_num++;
+			}
+			else	
+			{
+				if(choice == 2){
+					if_elseif_else_num++;
+				}
+			}
+		}
+	}
+}

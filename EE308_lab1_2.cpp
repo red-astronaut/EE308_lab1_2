@@ -18,7 +18,8 @@ int switch_num = 0;
 int case_num[100] = {0};
 int ifelse_num = 0;
 int if_elseif_else_num = 0;
-int choice = 0;
+int choice = -1;
+int store[1000]={0};
 
 //functions
 int Verify(string str, string keyword1);	
@@ -32,7 +33,7 @@ int main ()
 	string file_name;
 	int lv;
 	string temp;
-	cout << "Please enter the file address: ";				
+	cout << "Please enter the file address: ";		//D:\Documents\Desktop\test.cpp		
 	cin >> file_name;						
 	cout << "Please enter the level: ";
 	cin >> lv;
@@ -116,25 +117,28 @@ void Level_2(string word)
 void Level_34(string word)		
 {
 	if(Verify(word, "else if")){
-		choice = 2;
+		choice++;
+		store[choice]=2;
 	}
 	else
 	{
 		if(Verify(word, "if")){
-			choice = 1;
+			choice++;
+			store[choice]=1;
 		}
 		if(Verify(word, "else"))
 		{
-			if(choice == 1){
+			if(store[choice] == 1){
 				ifelse_num++;
+				choice--;
 			}
 			else	
 			{
-				if(choice == 2){
+				if(store[choice]== 2){
 					if_elseif_else_num++;
+					choice--;
 				}
 			}
 		}
 	}
 }
-

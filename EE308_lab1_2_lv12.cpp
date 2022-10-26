@@ -72,7 +72,7 @@ int Verify(string str, string keyword1)
 {
 	
 	int location = str.find(keyword1, 0);
-	//int len = keyword1.length();	
+		
 	if(location != int(string::npos))//determine a word endness
 		return 1;
 	else
